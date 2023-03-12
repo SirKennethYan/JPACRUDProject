@@ -1,6 +1,10 @@
 package com.skilldistillery.myanimelist.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -42,12 +46,23 @@ class AnimeShowTest {
 	}
 
 	@Test
-	void test() {
+	void test_entity_mapping() {
 		assertNotNull(as);
-		assertEquals("Death Note", as.getName());
-		
+		assertEquals("Death Note", as.getName());	
 	}
-
-
+	
+	@Test
+	void test_findShowById() {
+		assertNotNull(as);
+		assertEquals(1, as.getId());	
+	}
+	
+	@Test
+	void test_findAll() {
+		List<AnimeShow> allAnimeShows = em.createQuery("SELECT ashow FROM AnimeShow ashow", AnimeShow.class).getResultList();
+		assertNotNull(as);
+		assertTrue(allAnimeShows.size() > 0);		
+	}
+	
 
 }
