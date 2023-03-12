@@ -25,9 +25,6 @@ public class AnimeShow {
 	@Column(name="image_url")
 	private String imageURL;
 	
-	@Column(name="run_time")
-	private Integer runTime;
-	
 	private Integer seasons;
 	
 	@Column(name="episode_count")
@@ -91,16 +88,6 @@ public class AnimeShow {
 	}
 
 
-	public Integer getRunTime() {
-		return runTime;
-	}
-
-
-	public void setRunTime(Integer runTime) {
-		this.runTime = runTime;
-	}
-
-
 	public Integer getSeasons() {
 		return seasons;
 	}
@@ -124,8 +111,8 @@ public class AnimeShow {
 	@Override
 	public String toString() {
 		return "AnimeShow [id=" + id + ", name=" + name + ", releaseYear=" + releaseYear + ", description="
-				+ description + ", imageURL=" + imageURL + ", runTime=" + runTime + ", seasons=" + seasons
-				+ ", episodeCount=" + episodeCount + "]";
+				+ description + ", imageURL=" + imageURL + ", seasons=" + seasons + ", episodeCount=" + episodeCount
+				+ "]";
 	}
 
 }

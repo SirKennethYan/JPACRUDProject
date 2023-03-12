@@ -52,7 +52,6 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 			managed.setName(updatedAnimeShow.getName());
 			managed.setReleaseYear(updatedAnimeShow.getReleaseYear());
 			managed.setDescription(updatedAnimeShow.getDescription());
-			managed.setRunTime(updatedAnimeShow.getRunTime());
 			managed.setSeasons(updatedAnimeShow.getSeasons());
 			managed.setEpisodeCount(updatedAnimeShow.getEpisodeCount());
 		
