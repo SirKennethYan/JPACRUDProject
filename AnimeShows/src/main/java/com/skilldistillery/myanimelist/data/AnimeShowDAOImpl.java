@@ -13,12 +13,12 @@ import com.skilldistillery.myanimelist.entities.AnimeShow;
 @Service
 @Transactional
 public class AnimeShowDAOImpl implements AnimeShowsDAO {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 
 	@Override
-	public AnimeShow findById(int id) {	
+	public AnimeShow findById(int id) {
 		return em.find(AnimeShow.class, id);
 	}
 
@@ -32,30 +32,27 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 //	No begin/commit
 //	No em.close();
 	public AnimeShow create(AnimeShow as) {
-	    // start the transaction
-	    em.getTransaction().begin();
-	    // write the customer to the database
-	    em.persist(as);
-	    // update the "local" Customer object
-	    System.out.println("Anime Show Created" + as);
-	    em.flush();
-	    // commit the changes (actually perform the operation)
-	    em.getTransaction().commit();
-	    em.close();
+
+		// write the customer to the database
+		em.persist(as);
+		// update the "local" Customer object
+//		System.out.println("Anime Show Created" + as);
+		
+		em.close();
 		return as;
 	}
 
 	@Override
 	public AnimeShow update(int id, AnimeShow updatedAnimeShow) {
-		
+
 		AnimeShow managed = em.find(AnimeShow.class, id);
-			managed.setName(updatedAnimeShow.getName());
-			managed.setReleaseYear(updatedAnimeShow.getReleaseYear());
-			managed.setDescription(updatedAnimeShow.getDescription());
-			managed.setSeasons(updatedAnimeShow.getSeasons());
-			managed.setEpisodeCount(updatedAnimeShow.getEpisodeCount());
-		
-			em.close();
+		managed.setName(updatedAnimeShow.getName());
+		managed.setReleaseYear(updatedAnimeShow.getReleaseYear());
+		managed.setDescription(updatedAnimeShow.getDescription());
+		managed.setSeasons(updatedAnimeShow.getSeasons());
+		managed.setEpisodeCount(updatedAnimeShow.getEpisodeCount());
+//		System.out.println("Anime Show Updated" + updatedAnimeShow);
+		em.close();
 		return managed;
 	}
 
@@ -63,8 +60,8 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 	public boolean deleteById(int id) {
 		AnimeShow aShow = em.find(AnimeShow.class, id);
 		em.remove(aShow);
+//		System.out.println("Anime Show Deleted" + id);
 		em.close();
-		
 		return false;
 	}
 

@@ -20,10 +20,13 @@
 	<div class="container-fluid">
 		<h1>Anime List</h1>
 
-		<form action="findById.do" method="GET">
-			Find by Id: <input type="text" name="fid" /> <input
-				class="btn btn-primary" type="submit" value="Show Film" />
-		</form>
+		<div>
+			<form action="findById.do" method="GET">
+				Find Show by Id: <input type="text" name="id" /> <input
+					class="btn btn-primary" type="submit" value="Show Film" />
+			</form>
+		</div>
+		<br>
 
 		<table class="table table-striped table-hover">
 			<tbody>
@@ -31,22 +34,19 @@
 				<th>ID</th>
 				<th>Show</th>
 			</thead>
-				<c:choose>
-					<c:when test="${empty animeshows}">No Animeshows found.</c:when>
-					<c:otherwise>
-						<c:forEach var="as" items="${animeshows }">
-						<tr>
-							<td>${as.id }</td>
-							<td><a href="show.do?fid=${as.id}"> ${as.name} </a></td>
-						</tr>		
-						</c:forEach>
-					</c:otherwise>
-				</c:choose>
+			<c:forEach var="as" items="${animeshows}">
+				<tr>
+					<td>${as.id}</td>
+					<td><a href="getShowdetails.do?id=${as.id}"> ${as.name} </a></td>
+				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
-		
+
+
 	</div>
 
 	<jsp:include page="bootstrapFoot.jsp" />
+
 </body>
 </html>

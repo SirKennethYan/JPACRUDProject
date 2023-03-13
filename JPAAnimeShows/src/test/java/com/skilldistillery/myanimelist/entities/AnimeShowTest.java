@@ -25,7 +25,7 @@ class AnimeShowTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("JPAAnimeList");
+		emf = Persistence.createEntityManagerFactory("JPAAnimeShow");
 	}
 
 	@AfterAll
