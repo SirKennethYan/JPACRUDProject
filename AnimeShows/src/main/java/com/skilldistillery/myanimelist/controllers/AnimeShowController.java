@@ -61,20 +61,6 @@ public class AnimeShowController {
 		return "created";
 	}
 
-//	@PostMapping("update.do")
-//	public String updateShow(AnimeShow as, Model model, RedirectAttributes redir) {
-//		asDAO.update(as.getId(), as);
-//		model.addAttribute("animeshows", as);
-//		return "show/showdetails";
-//	}
-//	
-//	@PostMapping("updated.do")
-//	public String updatedShow(AnimeShow as, Model model, RedirectAttributes redir) {
-//		asDAO.update(as.getId(), as);
-//		model.addAttribute("animeshows", as);
-//		return "updated show";
-//	}
-
 	@RequestMapping(path = { "update.do" })
 	public String updateShowInfo(Model model, Integer cardId, AnimeShow as) {
 		model.addAttribute("update", as);
@@ -88,12 +74,6 @@ public class AnimeShowController {
 		return "updated";
 	}
 
-//	@PostMapping("delete.do")
-//	public String deleteShow(Integer id, Model model, RedirectAttributes redir) {
-//	    boolean deletedShow = asDAO.deleteById(0);
-//	    redir.addFlashAttribute("deletedShow", deletedShow);
-//	    return "redirect:/";
-//	}
 
 	@RequestMapping(path = "delete.do")
 	public String deleteShow(Integer cardId, Model model) {
@@ -104,12 +84,6 @@ public class AnimeShowController {
 	public String deletedShow(Model model, AnimeShow as) {
 		AnimeShow aShow = asDAO.findById(as.getId());
 		boolean deletedShow = asDAO.deleteById(as.getId());
-		if (deletedShow) {
-			model.addAttribute("delete", aShow.getName() + " Show deleted. ");
-		} else {
-			model.addAttribute("delete", "Could Not Delete the show. " + aShow.getName());
-
-		}
 		return "deleted";
 	}
 

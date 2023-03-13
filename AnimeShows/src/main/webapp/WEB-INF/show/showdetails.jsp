@@ -26,7 +26,7 @@
 				<input type="hidden" name="id" value="${animeshows.id}">
 				<button type="submit" class="btn btn-primary mr-2">Update</button>
 			</form>
-			<form method="POST" action="delete.do">
+			<form method="POST" action="deleted.do">
 				<input type="hidden" name="id" value="${animeshows.id}">
 				<button type="submit" class="btn btn-danger ml-2">Delete</button>
 			</form>
