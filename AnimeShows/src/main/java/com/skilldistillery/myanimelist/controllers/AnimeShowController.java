@@ -32,15 +32,6 @@ public class AnimeShowController {
 		return "show/showdetails";
 	}
 
-//	@GetMapping("show.do")
-//	public ModelAndView displayShow1(Integer id) {	
-//	    AnimeShow aShow = asDAO.findById(id);
-//	    ModelAndView mv = new ModelAndView();
-//	    mv.addObject("animeShow", aShow);
-//	    mv.setViewName("show");
-//	    return mv;
-//	}
-
 	@GetMapping("findById.do")
 	public String findById(Integer id, Model model) {
 		AnimeShow aShow = asDAO.findById(id);

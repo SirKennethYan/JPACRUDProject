@@ -9,12 +9,13 @@
 <jsp:include page="bootstrapHead.jsp" />
 
 </head>
-<body>
 
+<body style="background-color:#33475b">
 <jsp:include page="navbar.jsp" />
 
 <div class="container-fluid">
 
+<div style="color: white;">
 <h1>Create a new Show:</h1>
 
 	<form action="created.do" method="POST">
@@ -39,7 +40,7 @@
 	</form>
 	
 
-	
+</div>	
 </div>
 <jsp:include page="bootstrapFoot.jsp" />
 </body>

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="color: #792109">
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
   
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

@@ -29,15 +29,8 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 	}
 
 	@Override
-//	No begin/commit
-//	No em.close();
 	public AnimeShow create(AnimeShow as) {
-
-		// write the customer to the database
 		em.persist(as);
-		// update the "local" Customer object
-//		System.out.println("Anime Show Created" + as);
-		
 		em.close();
 		return as;
 	}
@@ -51,7 +44,6 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 		managed.setDescription(updatedAnimeShow.getDescription());
 		managed.setSeasons(updatedAnimeShow.getSeasons());
 		managed.setEpisodeCount(updatedAnimeShow.getEpisodeCount());
-//		System.out.println("Anime Show Updated" + updatedAnimeShow);
 		em.close();
 		return managed;
 	}
@@ -60,7 +52,6 @@ public class AnimeShowDAOImpl implements AnimeShowsDAO {
 	public boolean deleteById(int id) {
 		AnimeShow aShow = em.find(AnimeShow.class, id);
 		em.remove(aShow);
-//		System.out.println("Anime Show Deleted" + id);
 		em.close();
 		return false;
 	}

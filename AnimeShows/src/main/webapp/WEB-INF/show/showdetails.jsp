@@ -9,10 +9,10 @@
 
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
-<body>
+<body style="background-color:#33475b">
 	<jsp:include page="../navbar.jsp" />
 
-	<div class="container">
+	<div class="container" style="color: white;">
 
 		<h1>${animeshows.name}(${animeshows.releaseYear})</h1>
 		<h6>ID: ${animeshows.id}</h6>

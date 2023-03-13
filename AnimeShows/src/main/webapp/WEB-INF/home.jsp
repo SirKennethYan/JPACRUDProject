@@ -14,10 +14,15 @@
 
 </head>
 <body>
+<style>
+body {
+	background-image: linear-gradient(to bottom, #33475b, #6d92a8);
+}
+</style>
 
 	<jsp:include page="navbar.jsp" />
 
-	<div class="container-fluid">
+	<div class="container-fluid" style="color: white;">
 		<h1>Anime List</h1>
 
 		<div>
@@ -28,7 +33,7 @@
 		</div>
 		<br>
 
-		<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover" style="color: white;">
 			<tbody>
 			<thead>
 				<th>ID</th>
